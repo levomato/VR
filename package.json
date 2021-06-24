@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run bundle && npm-run-all --parallel webpack serve",
+    "dev": "npm run bundle && npm-run-all --parallel webpack serve",
+    "start": "node src/server.js", 
+    "heroku-postbuild": "webpack -p",
     "serve": "five-server",
     "bundle": "webpack --config webpack.config.js",
     "webpack": "webpack --config webpack.config.js --watch"
